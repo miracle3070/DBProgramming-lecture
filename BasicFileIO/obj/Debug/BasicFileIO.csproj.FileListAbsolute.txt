@@ -1,0 +1,10 @@
+C:\Users\한상우\source\repos\C#\BasicFileIO\bin\Debug\BasicFileIO.exe.config
+C:\Users\한상우\source\repos\C#\BasicFileIO\bin\Debug\BasicFileIO.exe
+C:\Users\한상우\source\repos\C#\BasicFileIO\bin\Debug\BasicFileIO.pdb
+C:\Users\한상우\source\repos\C#\BasicFileIO\obj\Debug\BasicFileIO.csprojAssemblyReference.cache
+C:\Users\한상우\source\repos\C#\BasicFileIO\obj\Debug\BasicFileIO.Form1.resources
+C:\Users\한상우\source\repos\C#\BasicFileIO\obj\Debug\BasicFileIO.Properties.Resources.resources
+C:\Users\한상우\source\repos\C#\BasicFileIO\obj\Debug\BasicFileIO.csproj.GenerateResource.cache
+C:\Users\한상우\source\repos\C#\BasicFileIO\obj\Debug\BasicFileIO.csproj.CoreCompileInputs.cache
+C:\Users\한상우\source\repos\C#\BasicFileIO\obj\Debug\BasicFileIO.exe
+C:\Users\한상우\source\repos\C#\BasicFileIO\obj\Debug\BasicFileIO.pdb

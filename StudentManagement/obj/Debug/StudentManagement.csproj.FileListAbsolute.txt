@@ -1,0 +1,10 @@
+C:\Users\한상우\source\repos\C#\StudentManagement\bin\Debug\StudentManagement.exe.config
+C:\Users\한상우\source\repos\C#\StudentManagement\bin\Debug\StudentManagement.exe
+C:\Users\한상우\source\repos\C#\StudentManagement\bin\Debug\StudentManagement.pdb
+C:\Users\한상우\source\repos\C#\StudentManagement\obj\Debug\StudentManagement.csprojAssemblyReference.cache
+C:\Users\한상우\source\repos\C#\StudentManagement\obj\Debug\StudentManagement.Form1.resources
+C:\Users\한상우\source\repos\C#\StudentManagement\obj\Debug\StudentManagement.Properties.Resources.resources
+C:\Users\한상우\source\repos\C#\StudentManagement\obj\Debug\StudentManagement.csproj.GenerateResource.cache
+C:\Users\한상우\source\repos\C#\StudentManagement\obj\Debug\StudentManagement.csproj.CoreCompileInputs.cache
+C:\Users\한상우\source\repos\C#\StudentManagement\obj\Debug\StudentManagement.exe
+C:\Users\한상우\source\repos\C#\StudentManagement\obj\Debug\StudentManagement.pdb

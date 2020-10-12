@@ -1,0 +1,10 @@
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\bin\Debug\[HW 02] 학생정보관리.exe.config
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\bin\Debug\[HW 02] 학생정보관리.exe
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\bin\Debug\[HW 02] 학생정보관리.pdb
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\obj\Debug\[HW 02] 학생정보관리.csprojAssemblyReference.cache
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\obj\Debug\_HW_02__학생정보관리.Form1.resources
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\obj\Debug\_HW_02__학생정보관리.Properties.Resources.resources
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\obj\Debug\[HW 02] 학생정보관리.csproj.GenerateResource.cache
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\obj\Debug\[HW 02] 학생정보관리.csproj.CoreCompileInputs.cache
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\obj\Debug\[HW 02] 학생정보관리.exe
+C:\Users\한상우\source\repos\C#\[HW 02] 학생정보관리\obj\Debug\[HW 02] 학생정보관리.pdb
