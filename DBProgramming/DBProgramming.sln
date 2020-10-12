@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBProgramming", "DBProgramming.csproj", "{E0762ADA-E6E9-4CAD-A833-8475C9AE89E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "..\ConsoleApp1\ConsoleApp1.csproj", "{142D71C2-734C-46EE-862B-67032CC6AC1A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "SubProjects\Calculator\Calculator.csproj", "{27A80D80-13C2-4FAB-893C-D64E28E6A153}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicFileIO", "..\BasicFileIO\BasicFileIO.csproj", "{BA32844F-CB25-43A6-84DC-C7D83643114D}"
@@ -27,10 +25,6 @@ Global
 		{E0762ADA-E6E9-4CAD-A833-8475C9AE89E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0762ADA-E6E9-4CAD-A833-8475C9AE89E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0762ADA-E6E9-4CAD-A833-8475C9AE89E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{142D71C2-734C-46EE-862B-67032CC6AC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{142D71C2-734C-46EE-862B-67032CC6AC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{142D71C2-734C-46EE-862B-67032CC6AC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{142D71C2-734C-46EE-862B-67032CC6AC1A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{27A80D80-13C2-4FAB-893C-D64E28E6A153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27A80D80-13C2-4FAB-893C-D64E28E6A153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27A80D80-13C2-4FAB-893C-D64E28E6A153}.Release|Any CPU.ActiveCfg = Release|Any CPU
