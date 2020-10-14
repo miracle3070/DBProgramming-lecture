@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace MarketBrowser
 {
@@ -35,19 +37,19 @@ namespace MarketBrowser
                 data.Add(list);
             }
 
-            int row = 0;
+            //int row = 0;
             while (sr.EndOfStream == false)
             {
                 line = sr.ReadLine();
-                var values = line.Split(',');
+                List<string> values = parseCSVLine(line);
 
-                for (int i = 0; i < values.Length; i++)
+                for (int i = 0; i < values.Count; i++)
                 {
                     data[i].Add(values[i]);
                 }
 
-                if (row++ == 10)
-                    break;
+             //   if (row++ == 10)
+             //       break;
             }
 
             //textBoxCSVViewer.Text = str;
@@ -60,7 +62,7 @@ namespace MarketBrowser
         {
             string str = "";
             textBoxCSVViewer.Text = "";
-            foreach (string value in data[1])
+            foreach (string value in data[columnIndex])
             {
                 str += value + "\r\n";
             }
@@ -83,9 +85,34 @@ namespace MarketBrowser
         }
 
         // 과제: 이 함수를 적절하게 수정하여 과제방에 올릴것
-        private string[] parseCSVLine(string line)
+        private List<string> parseCSVLine(string line)
         {
-            return line.Split(',');
+            var splitLine = line.Split(',');
+            List<string> result = new List<string>();
+            string temp = "";
+            for (int i = 0; i < splitLine.Length; i++)
+            {
+                temp = "";
+                if (splitLine[i][0] == '\"')
+                {
+
+                    while (splitLine[i][splitLine[i].Length - 1] != '\"')
+                    {
+                        temp += splitLine[i];
+                        i++;
+                    }
+                    temp += splitLine[i];
+                    result.Add(temp);
+                    continue;
+                }
+                else
+                {
+                    temp = splitLine[i];
+                    result.Add(temp);
+                }
+            }
+
+            return result;
         }
 
         private List<List<string>> MakeRowbasedDataStructure()
@@ -97,16 +124,16 @@ namespace MarketBrowser
 
             List<List<string>> data = new List<List<string>>();
 
-            int row = 0;
+            //int row = 0;
             while (sr.EndOfStream == false)
             {
                 line = sr.ReadLine();
-                var values = line.Split(',');
+                List<string> values = parseCSVLine(line);
 
                 data.Add(values.ToList());
 
-                if (row++ == 10)
-                    break;
+             //   if (row++ == 10)
+             //       break;
             }
 
             sr.Close();
@@ -139,8 +166,8 @@ namespace MarketBrowser
         private void buttonOpenCSV_Click(object sender, EventArgs e)
         {
             List<List<string>> data = MakeRowbasedDataStructure();
-            //printRowData_rowbased(data);
-            printColumnData_rowbased(data, 1);
+            printRowData_rowbased(data);
+            //printColumnData_rowbased(data, 1);
 
 
             //List<List<string>> data = MakeCloumnarDataStructure();
