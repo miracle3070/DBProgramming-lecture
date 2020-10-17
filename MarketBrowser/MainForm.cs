@@ -95,13 +95,19 @@ namespace MarketBrowser
                 temp = "";
                 if (splitLine[i][0] == '\"')
                 {
+                    temp += splitLine[i];
+                    temp += ",";
+                    i++;
 
                     while (splitLine[i][splitLine[i].Length - 1] != '\"')
                     {
                         temp += splitLine[i];
+                        temp += ",";
                         i++;
                     }
                     temp += splitLine[i];
+                    temp = temp.Remove(temp.Length-1);
+                    temp = temp.Remove(0,1);
                     result.Add(temp);
                     continue;
                 }

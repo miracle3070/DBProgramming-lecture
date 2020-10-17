@@ -53,10 +53,10 @@
             this.textBoxCSVViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCSVViewer.Location = new System.Drawing.Point(197, 288);
+            this.textBoxCSVViewer.Location = new System.Drawing.Point(197, 153);
             this.textBoxCSVViewer.Multiline = true;
             this.textBoxCSVViewer.Name = "textBoxCSVViewer";
-            this.textBoxCSVViewer.Size = new System.Drawing.Size(574, 148);
+            this.textBoxCSVViewer.Size = new System.Drawing.Size(574, 283);
             this.textBoxCSVViewer.TabIndex = 1;
             // 
             // label1
@@ -98,7 +98,7 @@
             this.textBoxSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearchResult.Location = new System.Drawing.Point(197, 158);
+            this.textBoxSearchResult.Location = new System.Drawing.Point(197, 36);
             this.textBoxSearchResult.Multiline = true;
             this.textBoxSearchResult.Name = "textBoxSearchResult";
             this.textBoxSearchResult.Size = new System.Drawing.Size(574, 111);
