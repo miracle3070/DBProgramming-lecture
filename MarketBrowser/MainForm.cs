@@ -41,9 +41,10 @@ namespace MarketBrowser
             while (sr.EndOfStream == false)
             {
                 line = sr.ReadLine();
-                List<string> values = parseCSVLine(line);
+                //List<string> values = parseCSVLine(line);
+                string[] values = parseCSVLine(line);
 
-                for (int i = 0; i < values.Count; i++)
+                for (int i = 0; i < values.Length; i++)
                 {
                     data[i].Add(values[i]);
                 }
@@ -85,7 +86,7 @@ namespace MarketBrowser
         }
 
         // 과제: 이 함수를 적절하게 수정하여 과제방에 올릴것
-        private List<string> parseCSVLine(string line)
+        private string[] parseCSVLine(string line)
         {
             var splitLine = line.Split(',');
             List<string> result = new List<string>();
@@ -114,21 +115,22 @@ namespace MarketBrowser
                 else
                 {
                     temp = splitLine[i];
-                    result.Add(temp);
+                    result.Add(temp);;
                 }
             }
 
-            return result;
+            return result.ToArray();
         }
 
         Dictionary<string, int> headerIndexDict = new Dictionary<string, int>();
 
         private void SetHeaderList(string header)
         {
-            List<string> values = parseCSVLine(header);
+            //List<string> values = parseCSVLine(header);
+            string[] values = parseCSVLine(header);
             listBoxHeaders.Items.Clear();
 
-            for(int i = 0; i < values.Count; i++)
+            for(int i = 0; i < values.Length; i++)
             {
                 string column = values[i];
                 listBoxHeaders.Items.Add(column);
@@ -152,7 +154,8 @@ namespace MarketBrowser
             while (sr.EndOfStream == false)
             {
                 line = sr.ReadLine();
-                List<string> values = parseCSVLine(line);
+                //List<string> values = parseCSVLine(line);
+                string[] values = parseCSVLine(line);
 
                 data.Add(values.ToList());
 

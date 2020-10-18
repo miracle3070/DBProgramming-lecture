@@ -53,10 +53,10 @@
             this.textBoxCSVViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCSVViewer.Location = new System.Drawing.Point(197, 153);
+            this.textBoxCSVViewer.Location = new System.Drawing.Point(174, 265);
             this.textBoxCSVViewer.Multiline = true;
             this.textBoxCSVViewer.Name = "textBoxCSVViewer";
-            this.textBoxCSVViewer.Size = new System.Drawing.Size(574, 283);
+            this.textBoxCSVViewer.Size = new System.Drawing.Size(574, 165);
             this.textBoxCSVViewer.TabIndex = 1;
             // 
             // label1
@@ -80,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 34);
+            this.label2.Location = new System.Drawing.Point(207, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 15);
             this.label2.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             // textBoxSearchKeyword
             // 
-            this.textBoxSearchKeyword.Location = new System.Drawing.Point(197, 63);
+            this.textBoxSearchKeyword.Location = new System.Drawing.Point(193, 92);
             this.textBoxSearchKeyword.Name = "textBoxSearchKeyword";
             this.textBoxSearchKeyword.Size = new System.Drawing.Size(114, 25);
             this.textBoxSearchKeyword.TabIndex = 5;
@@ -98,7 +98,7 @@
             this.textBoxSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearchResult.Location = new System.Drawing.Point(197, 36);
+            this.textBoxSearchResult.Location = new System.Drawing.Point(174, 138);
             this.textBoxSearchResult.Multiline = true;
             this.textBoxSearchResult.Name = "textBoxSearchResult";
             this.textBoxSearchResult.Size = new System.Drawing.Size(574, 111);
@@ -106,7 +106,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(197, 101);
+            this.buttonSearch.Location = new System.Drawing.Point(193, 28);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(114, 37);
             this.buttonSearch.TabIndex = 7;
@@ -119,13 +119,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxCSVViewer);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.textBoxSearchResult);
             this.Controls.Add(this.textBoxSearchKeyword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxHeaders);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxCSVViewer);
             this.Controls.Add(this.buttonOpenCSV);
             this.Name = "MainForm";
             this.Text = "CSV 검색기";
