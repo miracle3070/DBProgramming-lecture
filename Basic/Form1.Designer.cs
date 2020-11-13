@@ -35,7 +35,12 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.dataGridViewStudentList = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.관리자ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.사용자로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentList)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxName
@@ -100,6 +105,39 @@
             this.dataGridViewStudentList.Size = new System.Drawing.Size(500, 263);
             this.dataGridViewStudentList.TabIndex = 6;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.관리자ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 관리자ToolStripMenuItem
+            // 
+            this.관리자ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.사용자로그ToolStripMenuItem,
+            this.메뉴관리ToolStripMenuItem});
+            this.관리자ToolStripMenuItem.Name = "관리자ToolStripMenuItem";
+            this.관리자ToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.관리자ToolStripMenuItem.Text = "관리자";
+            // 
+            // 사용자로그ToolStripMenuItem
+            // 
+            this.사용자로그ToolStripMenuItem.Name = "사용자로그ToolStripMenuItem";
+            this.사용자로그ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.사용자로그ToolStripMenuItem.Text = "사용자 로그";
+            this.사용자로그ToolStripMenuItem.Click += new System.EventHandler(this.사용자로그ToolStripMenuItem_Click);
+            // 
+            // 메뉴관리ToolStripMenuItem
+            // 
+            this.메뉴관리ToolStripMenuItem.Name = "메뉴관리ToolStripMenuItem";
+            this.메뉴관리ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.메뉴관리ToolStripMenuItem.Text = "메뉴관리";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -112,9 +150,13 @@
             this.Controls.Add(this.textBoxGender);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentList)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +171,10 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.DataGridView dataGridViewStudentList;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 관리자ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 사용자로그ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 메뉴관리ToolStripMenuItem;
     }
 }
 

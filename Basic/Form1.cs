@@ -53,5 +53,12 @@ namespace Basic
                 rdr.Close();
             }
         }
+
+        private void 사용자로그ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUserLogViewer form = new FormUserLogViewer();
+            form.SetLogText("Hello");   // 폼에 값을 전달하는 방법
+            form.Show();
+        }
     }
 }
