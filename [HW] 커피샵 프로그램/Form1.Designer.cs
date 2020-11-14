@@ -28,74 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.textBoxPW = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.labelLoginUser = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSellCafeMocha = new System.Windows.Forms.Button();
-            this.btnSellLatte = new System.Windows.Forms.Button();
-            this.btnSellAmericano = new System.Windows.Forms.Button();
+            this.buttonLoadCoffee = new System.Windows.Forms.Button();
+            this.buttonSell = new System.Windows.Forms.Button();
+            this.dataGridViewCoffee = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnShowMonthlyCoffeeSalesLIst = new System.Windows.Forms.Button();
             this.btnShowDailyCoffeeSalesList = new System.Windows.Forms.Button();
             this.btnShowDailyUserSalesList = new System.Windows.Forms.Button();
             this.dataGridViewAdminScreen = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.관리자메뉴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.판매메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.사용자로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoffee)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminScreen)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(48, 23);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(112, 25);
-            this.textBoxID.TabIndex = 1;
-            // 
-            // textBoxPW
-            // 
-            this.textBoxPW.Location = new System.Drawing.Point(219, 23);
-            this.textBoxPW.Name = "textBoxPW";
-            this.textBoxPW.Size = new System.Drawing.Size(112, 25);
-            this.textBoxPW.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "PW";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(346, 23);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(87, 25);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "로그인";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // labelLoginUser
             // 
             this.labelLoginUser.AutoSize = true;
-            this.labelLoginUser.Location = new System.Drawing.Point(631, 27);
+            this.labelLoginUser.Location = new System.Drawing.Point(634, 47);
             this.labelLoginUser.Name = "labelLoginUser";
             this.labelLoginUser.Size = new System.Drawing.Size(172, 15);
             this.labelLoginUser.TabIndex = 5;
@@ -103,9 +64,9 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(840, 21);
+            this.btnLogout.Location = new System.Drawing.Point(832, 42);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(87, 25);
+            this.btnLogout.Size = new System.Drawing.Size(95, 30);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "로그아웃";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -113,50 +74,51 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnSellCafeMocha);
-            this.groupBox1.Controls.Add(this.btnSellLatte);
-            this.groupBox1.Controls.Add(this.btnSellAmericano);
+            this.groupBox1.Controls.Add(this.buttonLoadCoffee);
+            this.groupBox1.Controls.Add(this.buttonSell);
+            this.groupBox1.Controls.Add(this.dataGridViewCoffee);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Location = new System.Drawing.Point(48, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 177);
+            this.groupBox1.Size = new System.Drawing.Size(879, 292);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "캐셔용 화면";
             // 
-            // btnSellCafeMocha
+            // buttonLoadCoffee
             // 
-            this.btnSellCafeMocha.Location = new System.Drawing.Point(602, 73);
-            this.btnSellCafeMocha.Name = "btnSellCafeMocha";
-            this.btnSellCafeMocha.Size = new System.Drawing.Size(235, 81);
-            this.btnSellCafeMocha.TabIndex = 3;
-            this.btnSellCafeMocha.Text = "카페모카\r\n\r\n2000원";
-            this.btnSellCafeMocha.UseVisualStyleBackColor = true;
-            this.btnSellCafeMocha.Click += new System.EventHandler(this.btnSellCafeMocha_Click);
+            this.buttonLoadCoffee.Location = new System.Drawing.Point(321, 25);
+            this.buttonLoadCoffee.Name = "buttonLoadCoffee";
+            this.buttonLoadCoffee.Size = new System.Drawing.Size(154, 31);
+            this.buttonLoadCoffee.TabIndex = 3;
+            this.buttonLoadCoffee.Text = "새로고침";
+            this.buttonLoadCoffee.UseVisualStyleBackColor = true;
+            this.buttonLoadCoffee.Click += new System.EventHandler(this.buttonLoadCoffee_Click);
             // 
-            // btnSellLatte
+            // buttonSell
             // 
-            this.btnSellLatte.Location = new System.Drawing.Point(321, 73);
-            this.btnSellLatte.Name = "btnSellLatte";
-            this.btnSellLatte.Size = new System.Drawing.Size(235, 81);
-            this.btnSellLatte.TabIndex = 2;
-            this.btnSellLatte.Text = "라떼\r\n\r\n1500원";
-            this.btnSellLatte.UseVisualStyleBackColor = true;
-            this.btnSellLatte.Click += new System.EventHandler(this.btnSellLatte_Click);
+            this.buttonSell.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonSell.Location = new System.Drawing.Point(552, 63);
+            this.buttonSell.Name = "buttonSell";
+            this.buttonSell.Size = new System.Drawing.Size(304, 200);
+            this.buttonSell.TabIndex = 2;
+            this.buttonSell.Text = "판매하기";
+            this.buttonSell.UseVisualStyleBackColor = true;
+            this.buttonSell.Click += new System.EventHandler(this.buttonSell_Click);
             // 
-            // btnSellAmericano
+            // dataGridViewCoffee
             // 
-            this.btnSellAmericano.Location = new System.Drawing.Point(42, 73);
-            this.btnSellAmericano.Name = "btnSellAmericano";
-            this.btnSellAmericano.Size = new System.Drawing.Size(235, 81);
-            this.btnSellAmericano.TabIndex = 1;
-            this.btnSellAmericano.Text = "아메리카노\r\n\r\n1000원";
-            this.btnSellAmericano.UseVisualStyleBackColor = true;
-            this.btnSellAmericano.Click += new System.EventHandler(this.btnSellAmericano_Click);
+            this.dataGridViewCoffee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCoffee.Location = new System.Drawing.Point(7, 63);
+            this.dataGridViewCoffee.Name = "dataGridViewCoffee";
+            this.dataGridViewCoffee.RowHeadersWidth = 51;
+            this.dataGridViewCoffee.RowTemplate.Height = 27;
+            this.dataGridViewCoffee.Size = new System.Drawing.Size(508, 200);
+            this.dataGridViewCoffee.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(42, 32);
+            this.dateTimePicker1.Location = new System.Drawing.Point(42, 28);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker1.TabIndex = 0;
@@ -167,7 +129,7 @@
             this.groupBox2.Controls.Add(this.btnShowDailyCoffeeSalesList);
             this.groupBox2.Controls.Add(this.btnShowDailyUserSalesList);
             this.groupBox2.Controls.Add(this.dataGridViewAdminScreen);
-            this.groupBox2.Location = new System.Drawing.Point(48, 270);
+            this.groupBox2.Location = new System.Drawing.Point(48, 395);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(879, 316);
             this.groupBox2.TabIndex = 8;
@@ -214,49 +176,89 @@
             this.dataGridViewAdminScreen.Size = new System.Drawing.Size(866, 200);
             this.dataGridViewAdminScreen.TabIndex = 0;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.관리자메뉴ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(967, 28);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 관리자메뉴ToolStripMenuItem
+            // 
+            this.관리자메뉴ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.판매메뉴관리ToolStripMenuItem,
+            this.사용자로그ToolStripMenuItem});
+            this.관리자메뉴ToolStripMenuItem.Name = "관리자메뉴ToolStripMenuItem";
+            this.관리자메뉴ToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.관리자메뉴ToolStripMenuItem.Text = "관리자 메뉴";
+            // 
+            // 판매메뉴관리ToolStripMenuItem
+            // 
+            this.판매메뉴관리ToolStripMenuItem.Name = "판매메뉴관리ToolStripMenuItem";
+            this.판매메뉴관리ToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.판매메뉴관리ToolStripMenuItem.Text = "판매 메뉴 관리";
+            this.판매메뉴관리ToolStripMenuItem.Click += new System.EventHandler(this.판매메뉴관리ToolStripMenuItem_Click);
+            // 
+            // 사용자로그ToolStripMenuItem
+            // 
+            this.사용자로그ToolStripMenuItem.Name = "사용자로그ToolStripMenuItem";
+            this.사용자로그ToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.사용자로그ToolStripMenuItem.Text = "사용자 로그";
+            this.사용자로그ToolStripMenuItem.Click += new System.EventHandler(this.사용자로그ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 634);
+            this.ClientSize = new System.Drawing.Size(967, 746);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.labelLoginUser);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBoxPW);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxID);
-            this.Controls.Add(this.label1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "맛있는 커피 - 5671309 한상우";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoffee)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdminScreen)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.TextBox textBoxPW;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label labelLoginUser;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnSellCafeMocha;
-        private System.Windows.Forms.Button btnSellLatte;
-        private System.Windows.Forms.Button btnSellAmericano;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridViewAdminScreen;
         private System.Windows.Forms.Button btnShowMonthlyCoffeeSalesLIst;
         private System.Windows.Forms.Button btnShowDailyCoffeeSalesList;
         private System.Windows.Forms.Button btnShowDailyUserSalesList;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 관리자메뉴ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 판매메뉴관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 사용자로그ToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridViewCoffee;
+        private System.Windows.Forms.Button buttonSell;
+        private System.Windows.Forms.Button buttonLoadCoffee;
     }
 }
 

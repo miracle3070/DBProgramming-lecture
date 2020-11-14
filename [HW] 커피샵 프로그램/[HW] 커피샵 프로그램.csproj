@@ -99,11 +99,56 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginUser.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuAdd.Designer.cs">
+      <DependentUpon>FormMenuAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuManager.Designer.cs">
+      <DependentUpon>FormMenuManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuModify.Designer.cs">
+      <DependentUpon>FormMenuModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShowUserLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowUserLog.Designer.cs">
+      <DependentUpon>FormShowUserLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuAdd.resx">
+      <DependentUpon>FormMenuAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuManager.resx">
+      <DependentUpon>FormMenuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuModify.resx">
+      <DependentUpon>FormMenuModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowUserLog.resx">
+      <DependentUpon>FormShowUserLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

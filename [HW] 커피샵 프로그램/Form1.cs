@@ -13,106 +13,45 @@ namespace _HW__커피샵_프로그램
 {
     public partial class Form1 : Form
     {
-        private LoginUser loginUser;
         public Form1()
         {
             InitializeComponent();
-            InitVariables();
         }
 
-        private void InitVariables()
+        // 커피 판매처리 메소드
+        private void buttonSell_Click(object sender, EventArgs e)
         {
-            loginUser = null;
-        }
-
-        // 로그인 기능을 수행하는 메소드
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string inputID = textBoxID.Text;
-            string inputPW = textBoxPW.Text;
-
-            string query = "SELECT * FROM coffee_user WHERE login_id='" + inputID + "' AND password='" + inputPW + "';";
+            string selectedCoffeeID = dataGridViewCoffee.CurrentRow.Cells["순번"].Value.ToString();
+            string query = "SELECT * FROM coffee_kind WHERE id=" + selectedCoffeeID + ";";
             MySqlDataReader rdr = DBManager.GetInstance().Select(query);
             rdr.Read();
 
-            if (rdr.HasRows == false) // 입력한 아이디, 비번에 대한 유저가 없을때
+            if (rdr.HasRows == false)
             {
+                MessageBox.Show("존재하지 않는 메뉴입니다.", "오류");
                 DBManager.GetInstance().SelectClose(rdr);
-                MessageBox.Show("아이디 또는 비밀번호를 잘못 입력하셨습니다.", "알림");
                 return;
             }
-            else // 입력한 아이디, 비번에 대한 유저 정보를 찾았을때
-            {
-                loginUser = new LoginUser(rdr["login_id"].ToString(), rdr["name"].ToString());
-                labelLoginUser.Text = loginUser.name + "님 로그인 되었습니다.";
-                DBManager.GetInstance().SelectClose(rdr);
-            }
-        }
 
-        // 로그아웃을 수행하는 메소드
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            if(loginUser == null)
-            {
-                MessageBox.Show("이미 로그아웃 상태입니다.", "알림");
-            }
+            string loginID = UserManager.GetInstance().loginID;
+            string price = rdr["price"].ToString();
+            string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string coffeeName = rdr["name"].ToString();
+            DBManager.GetInstance().SelectClose(rdr);
 
-            loginUser = null;
-            labelLoginUser.Text = "먼저 로그인을 해주세요.";
-        }
+            query = "INSERT INTO coffee_sales(login_id, coffee_id, sales, date) " +
+                "VALUES('" + loginID + "', " + selectedCoffeeID + ", " + price + ", '" + date + "');";
 
-        // 아메리카노 판매 처리
-        private void btnSellAmericano_Click(object sender, EventArgs e)
-        {
-            if(loginUser == null)
-            {
-                MessageBox.Show("로그인 후 이용해주세요.", "알림");
-                return;
-            }
-            
-            string query = "INSERT INTO coffee_sales(login_id, coffee_id, sales, date) " +
-                "VALUES('" + loginUser.loginID + "', 1, 1000, '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "');";
             DBManager.GetInstance().Insert(query);
-
-            MessageBox.Show("아메리카노 판매 완료!", "알림");
-        }
-
-        // 라떼 판매 처리
-        private void btnSellLatte_Click(object sender, EventArgs e)
-        {
-            if (loginUser == null)
-            {
-                MessageBox.Show("로그인 후 이용해주세요.", "알림");
-                return;
-            }
-
-            string query = "INSERT INTO coffee_sales(login_id, coffee_id, sales, date) " +
-                "VALUES('" + loginUser.loginID + "', 2, 1500, '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "');";
-            DBManager.GetInstance().Insert(query);
-
-            MessageBox.Show("라떼 판매 완료!", "알림");
-        }
-
-        // 카페모카 판매 처리
-        private void btnSellCafeMocha_Click(object sender, EventArgs e)
-        {
-            if (loginUser == null)
-            {
-                MessageBox.Show("로그인 후 이용해주세요.", "알림");
-                return;
-            }
-
-            string query = "INSERT INTO coffee_sales(login_id, coffee_id, sales, date) " +
-                "VALUES('" + loginUser.loginID + "', 3, 2000, '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "');";
-            DBManager.GetInstance().Insert(query);
-
-            MessageBox.Show("카페모카 판매 완료!", "알림");
+            MessageBox.Show(coffeeName + " 이(가) 판매되었습니다.", "알림");
         }
 
         // 사용자별 일일 판매량, 판매액을 출력해주는 메소드
         private void btnShowDailyUserSalesList_Click(object sender, EventArgs e)
         {
-            if (loginUser == null || loginUser.loginID != "admin")
+            string permission = UserManager.GetInstance().permission;
+
+            if (permission != "1")
             {
                 MessageBox.Show("관리자만 사용 가능합니다.");
                 return;
@@ -137,7 +76,9 @@ namespace _HW__커피샵_프로그램
         // 커피 종류별 일일 판매량, 판매액을 출력해주는 메소드
         private void btnShowDailyCoffeeSalesList_Click(object sender, EventArgs e)
         {
-            if (loginUser == null || loginUser.loginID != "admin")
+            string permission = UserManager.GetInstance().permission;
+
+            if (permission != "1")
             {
                 MessageBox.Show("관리자만 사용 가능합니다.");
                 return;
@@ -163,7 +104,9 @@ namespace _HW__커피샵_프로그램
         // 커피 종류별 월별 누적 판매량, 판매액을 보여주는 메소드
         private void btnShowMonthlyCoffeeSalesLIst_Click(object sender, EventArgs e)
         {
-            if (loginUser == null || loginUser.loginID != "admin")
+            string permission = UserManager.GetInstance().permission;
+
+            if (permission != "1")
             {
                 MessageBox.Show("관리자만 사용 가능합니다.");
                 return;
@@ -185,5 +128,74 @@ namespace _HW__커피샵_프로그램
             dataGridViewAdminScreen.DataSource = dt;
             DBManager.GetInstance().SelectClose(rdr);
         }
+
+        // 메인 창이 로드되면 수행하는 동작
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // 로그인한 사용자 이름 표시
+            string name = UserManager.GetInstance().name;
+            labelLoginUser.Text = name + "님 반갑습니다!";
+
+            // 캐셔용 화면의 커피 리스트 로드
+            LoadCoffeeList();
+        }
+
+        private void 판매메뉴관리ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string permission = UserManager.GetInstance().permission;
+
+            if(permission != "1")
+            {
+                MessageBox.Show("관리자만 이용 가능한 기능입니다.", "오류");
+                return;
+            }
+
+            FormMenuManager newForm = new FormMenuManager();
+            newForm.Show();
+        }
+
+        private void 사용자로그ToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            string permission = UserManager.GetInstance().permission;
+
+            if (permission != "1")
+            {
+                MessageBox.Show("관리자만 이용 가능한 기능입니다.", "오류");
+                return;
+            }            
+
+            FormShowUserLog newForm = new FormShowUserLog();
+            newForm.Show();
+        }
+
+        // 로그아웃 버튼을 누르면 수행되는 동작
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // 캐셔용 화면의 새로고침 버튼을 누르면 동작하는 메소드
+        private void buttonLoadCoffee_Click(object sender, EventArgs e)
+        {
+            LoadCoffeeList();
+        }
+
+        // 캐셔용 화면에 커피 리스트를 띄우는 메소드
+        private void LoadCoffeeList()
+        {
+            string query = "SELECT * FROM coffee_kind;";
+            MySqlDataReader rdr = DBManager.GetInstance().Select(query);
+
+            DataTable dt = new DataTable();
+            dt.Load(rdr);
+
+            dt.Columns[0].ColumnName = "순번";
+            dt.Columns[1].ColumnName = "이름";
+            dt.Columns[2].ColumnName = "가격";
+
+            dataGridViewCoffee.DataSource = dt;
+            DBManager.GetInstance().SelectClose(rdr);
+        }
+
     }
 }
