@@ -22,6 +22,9 @@ namespace Basic
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            QueryManager.Select("*").From("student").Where("gender = 'male'").Exec();
+            return;
+
             string name = textBoxName.Text;
             string gender = textBoxGender.Text;
             StudentInfo sinfo = new StudentInfo(name, gender);

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +34,62 @@ namespace Basic
             }
         }
 
-
         public void msg(string msg)
         {
             MessageBox.Show(msg, "확인");
         }
+    }
+
+    class QueryManager
+    {
+        public QueryManager()
+        {
+
+        }
+
+        string query = "";
+
+        public static QueryManager Select(string columns)
+        {
+            QueryManager instance = new QueryManager();
+
+            instance.query = "SELECT " + columns + " ";
+
+            return instance;
+        }
+
+        public QueryManager From(string table)
+        {
+            query += " FROM " + table;
+
+            return this;
+        }
+
+        public QueryManager Where(string where)
+        {
+            query += " WHERE " + where;
+
+            return this;
+        }
+
+        public QueryManager GroupBy(string groupby)
+        {
+            query += " Group By " + groupby;
+
+            return this;
+        }
+
+        public DataTable Exec()
+        {
+            DataTable dt = new DataTable();
+
+            MessageBox.Show("Query = " + query, "확인");
+
+            // DBManager 실행
+
+            return dt;
+        }
+
+
     }
 }
