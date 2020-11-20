@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoffeeSales.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -123,6 +124,18 @@
     <Compile Include="FormMenuModify.Designer.cs">
       <DependentUpon>FormMenuModify.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSearchSalesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchSalesList.Designer.cs">
+      <DependentUpon>FormSearchSalesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearchSalesListModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchSalesListModify.Designer.cs">
+      <DependentUpon>FormSearchSalesListModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormShowUserLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuModify.resx">
       <DependentUpon>FormMenuModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchSalesList.resx">
+      <DependentUpon>FormSearchSalesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchSalesListModify.resx">
+      <DependentUpon>FormSearchSalesListModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormShowUserLog.resx">
       <DependentUpon>FormShowUserLog.cs</DependentUpon>

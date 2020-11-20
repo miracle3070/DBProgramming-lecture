@@ -13,12 +13,43 @@ namespace _HW__커피샵_프로그램
 {
     public partial class Form1 : Form
     {
+        private List<CoffeeSales> goods;
+        private int orderNumber;
+
         public Form1()
         {
             InitializeComponent();
+            this.goods = new List<CoffeeSales>();
+            this.orderNumber = 1;
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         // 커피 판매처리 메소드
+        private void buttonSell_Click(object sender, EventArgs e)
+        {
+            string currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            for(int i=0; i<goods.Count; i++)
+            {
+                string loginID = UserManager.GetInstance().loginID;
+                string orderNumber = this.orderNumber.ToString();
+                string coffeeID = goods[i].id.ToString();
+                string count = goods[i].count.ToString();
+                string price = goods[i].price.ToString();
+                string status = "판매 완료";
+
+                string sql = "INSERT INTO coffee_sales(login_id, order_number, coffee_id, " +
+                    "count, price, datetime, status) " + "VALUES('" + loginID + "', " + orderNumber + ", " +
+                    coffeeID + ", " + count + ", " + price + ", '" + currentTime + "', '" + status + "');";
+
+                DBManager.GetInstance().Insert(sql);
+            }
+
+            this.orderNumber = (this.orderNumber % 10) + 1;
+            MessageBox.Show("판매가 완료되었습니다.", "알림");
+        }
+
+        /*
+        // 커피 판매처리 메소드 (예전꺼)
         private void buttonSell_Click(object sender, EventArgs e)
         {
             string selectedCoffeeID = dataGridViewCoffee.CurrentRow.Cells["순번"].Value.ToString();
@@ -45,6 +76,7 @@ namespace _HW__커피샵_프로그램
             DBManager.GetInstance().Insert(query);
             MessageBox.Show(coffeeName + " 이(가) 판매되었습니다.", "알림");
         }
+        */
 
         // 사용자별 일일 판매량, 판매액을 출력해주는 메소드
         private void btnShowDailyUserSalesList_Click(object sender, EventArgs e)
@@ -72,6 +104,7 @@ namespace _HW__커피샵_프로그램
             dataGridViewAdminScreen.DataSource = dt;
             DBManager.GetInstance().SelectClose(rdr);
         }
+        
 
         // 커피 종류별 일일 판매량, 판매액을 출력해주는 메소드
         private void btnShowDailyCoffeeSalesList_Click(object sender, EventArgs e)
@@ -197,5 +230,77 @@ namespace _HW__커피샵_프로그램
             DBManager.GetInstance().SelectClose(rdr);
         }
 
+        // 장바구니에 커피 상품을 담는 메소드
+        private void buttonAddGoods_Click(object sender, EventArgs e)
+        {
+            bool isGoodsExist = false; //동일한 상품이 담겨있는지 표시하는 플래그
+            int existIndex = -1;
+            string coffeeID = dataGridViewCoffee.CurrentRow.Cells["순번"].Value.ToString();
+
+            for(int i=0; i<goods.Count; i++)
+            {
+                if(goods[i].id == coffeeID)
+                {
+                    isGoodsExist = true;
+                    existIndex = i;
+                    break;
+                }
+            }
+
+            if(!isGoodsExist) //동일한 상품이 장바구니에 담겨 있지 않으면 실행
+            {
+                CoffeeSales coffee = new CoffeeSales();
+                coffee.id = dataGridViewCoffee.CurrentRow.Cells["순번"].Value.ToString();
+                coffee.name = dataGridViewCoffee.CurrentRow.Cells["이름"].Value.ToString();
+                coffee.count = 1;
+                coffee.price = Convert.ToInt32(dataGridViewCoffee.CurrentRow.Cells["가격"].Value);
+                this.goods.Add(coffee);
+
+                string[] row = { coffee.id, coffee.name, coffee.count.ToString(), coffee.price.ToString() };
+                dataGridViewGoods.Rows.Add(row);
+            }
+            else //상품이 이미 장바구니에 담겨있을 경우
+            {
+                goods[existIndex].count++;
+                goods[existIndex].price += Convert.ToInt32(dataGridViewCoffee.CurrentRow.Cells["가격"].Value);
+
+                var row = dataGridViewGoods.Rows[existIndex];
+                row.Cells["개수"].Value = goods[existIndex].count;
+                row.Cells["가격"].Value = goods[existIndex].price;
+            }
+
+
+        }
+
+        // 장바구니에 담은 상품을 삭제하는 메소드
+        private void buttonRemoveGoods_Click(object sender, EventArgs e)
+        {
+           try
+            {
+                string coffeeID = dataGridViewGoods.CurrentRow.Cells["순번"].Value.ToString();
+                int i = 0;
+                for (i = 0; i < goods.Count; i++)
+                {
+                    if (goods[i].id == coffeeID)
+                    {
+                        goods.RemoveAt(i);
+                        break;
+                    }
+                }
+                dataGridViewGoods.Rows.RemoveAt(i);
+                MessageBox.Show("선택된 상품이 장바구니에서 제거되었습니다.", "알림");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("장바구니가 비었거나 요소가 선택되지 않았습니다.", "오류");
+                return;
+            }            
+        }
+
+        private void 시간별주문내역ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSearchSalesList newForm = new FormSearchSalesList();
+            newForm.Show();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,5 +61,70 @@ namespace _HW__커피샵_프로그램
             cmd.ExecuteNonQuery();
         }
 
+    }
+
+
+    public class QueryManager
+    {
+        private string query;
+
+        public QueryManager()
+        {
+            this.query = "";
+        }
+
+        public static QueryManager Select(string columns)
+        {
+            QueryManager instance = new QueryManager();
+            instance.query += "SELECT " + columns;
+            return instance;
+        }
+
+        public QueryManager From(string table)
+        {
+            query += " FROM " + table;
+
+            return this;
+        }
+
+        public QueryManager Join(string tables)
+        {
+            query += " JOIN " + tables;
+
+            return this;
+        }
+
+        public QueryManager On(string condition)
+        {
+            query += " ON " + condition;
+
+            return this;
+        }
+
+        public QueryManager Where(string where)
+        {
+            query += " WHERE " + where;
+
+            return this;
+        }
+
+        public QueryManager GroupBy(string groupBy)
+        {
+            query += " GROUP BY " + groupBy;
+
+            return this;
+        }
+        
+        public DataTable SelectExec()
+        {
+            query += ";";
+            DataTable dt = new DataTable();
+
+            MySqlDataReader rdr = DBManager.GetInstance().Select(query);
+            dt.Load(rdr);
+            DBManager.GetInstance().SelectClose(rdr);
+
+            return dt;
+        }
     }
 }
