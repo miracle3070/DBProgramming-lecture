@@ -56,6 +56,8 @@
             this.판매메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사용자로그ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.시간별주문내역ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.커피정보변경이력ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.커피주문정보변경이력ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoffee)).BeginInit();
@@ -301,7 +303,9 @@
             this.관리자메뉴ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.판매메뉴관리ToolStripMenuItem,
             this.사용자로그ToolStripMenuItem,
-            this.시간별주문내역ToolStripMenuItem});
+            this.시간별주문내역ToolStripMenuItem,
+            this.커피정보변경이력ToolStripMenuItem,
+            this.커피주문정보변경이력ToolStripMenuItem});
             this.관리자메뉴ToolStripMenuItem.Name = "관리자메뉴ToolStripMenuItem";
             this.관리자메뉴ToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.관리자메뉴ToolStripMenuItem.Text = "관리자 메뉴";
@@ -309,23 +313,37 @@
             // 판매메뉴관리ToolStripMenuItem
             // 
             this.판매메뉴관리ToolStripMenuItem.Name = "판매메뉴관리ToolStripMenuItem";
-            this.판매메뉴관리ToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.판매메뉴관리ToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.판매메뉴관리ToolStripMenuItem.Text = "판매 메뉴 관리";
             this.판매메뉴관리ToolStripMenuItem.Click += new System.EventHandler(this.판매메뉴관리ToolStripMenuItem_Click);
             // 
             // 사용자로그ToolStripMenuItem
             // 
             this.사용자로그ToolStripMenuItem.Name = "사용자로그ToolStripMenuItem";
-            this.사용자로그ToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.사용자로그ToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.사용자로그ToolStripMenuItem.Text = "사용자 로그";
             this.사용자로그ToolStripMenuItem.Click += new System.EventHandler(this.사용자로그ToolStripMenuItem_Click);
             // 
             // 시간별주문내역ToolStripMenuItem
             // 
             this.시간별주문내역ToolStripMenuItem.Name = "시간별주문내역ToolStripMenuItem";
-            this.시간별주문내역ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.시간별주문내역ToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.시간별주문내역ToolStripMenuItem.Text = "시간별 주문 내역";
             this.시간별주문내역ToolStripMenuItem.Click += new System.EventHandler(this.시간별주문내역ToolStripMenuItem_Click);
+            // 
+            // 커피정보변경이력ToolStripMenuItem
+            // 
+            this.커피정보변경이력ToolStripMenuItem.Name = "커피정보변경이력ToolStripMenuItem";
+            this.커피정보변경이력ToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.커피정보변경이력ToolStripMenuItem.Text = "커피 정보 변경 이력";
+            this.커피정보변경이력ToolStripMenuItem.Click += new System.EventHandler(this.커피정보변경이력ToolStripMenuItem_Click);
+            // 
+            // 커피주문정보변경이력ToolStripMenuItem
+            // 
+            this.커피주문정보변경이력ToolStripMenuItem.Name = "커피주문정보변경이력ToolStripMenuItem";
+            this.커피주문정보변경이력ToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.커피주문정보변경이력ToolStripMenuItem.Text = "커피 주문 정보 변경 이력";
+            this.커피주문정보변경이력ToolStripMenuItem.Click += new System.EventHandler(this.커피주문정보변경이력ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -382,6 +400,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 개수;
         private System.Windows.Forms.DataGridViewTextBoxColumn 가격;
         private System.Windows.Forms.Button buttonRemoveGoods;
+        private System.Windows.Forms.ToolStripMenuItem 커피정보변경이력ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 커피주문정보변경이력ToolStripMenuItem;
     }
 }
 

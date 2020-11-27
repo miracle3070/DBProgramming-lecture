@@ -45,7 +45,26 @@ namespace _HW__커피샵_프로그램
                 MessageBox.Show("가격에는 정수값만 입력해주세요.", "오류");
                 return;
             }
-            
+
+            // 커피 정보 변경 이력 추가
+            string select_query = "SELECT * FROM coffee_kind WHERE id=" + coffeeID + ";";
+            MySqlDataReader rdr = DBManager.GetInstance().Select(select_query);
+            rdr.Read();
+
+            string past_name = rdr["name"].ToString();
+            string past_price = rdr["price"].ToString();
+            DBManager.GetInstance().SelectClose(rdr);
+            string loginID = UserManager.GetInstance().loginID;
+            string currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            string log_query = "INSERT INTO coffee_kind_modify(login_id, coffee_id, past_name, " +
+                "past_price, modified_name, modified_price, datetime)" +
+                "VALUES('" + loginID + "', " + coffeeID + ", '" + past_name + "', " + past_price +
+                ", '" + inputName + "', " + inputPrice + ", '" + currentTime + "');";
+            DBManager.GetInstance().Insert(log_query);
+
+
+            // 커피 정보 업데이트
             string query = "UPDATE coffee_kind SET name='" + inputName + "', " +
                 "price=" + inputPrice + " WHERE id=" + coffeeID + ";";
 

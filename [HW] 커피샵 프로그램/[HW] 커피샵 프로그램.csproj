@@ -124,6 +124,18 @@
     <Compile Include="FormMenuModify.Designer.cs">
       <DependentUpon>FormMenuModify.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenuModifyLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuModifyLog.Designer.cs">
+      <DependentUpon>FormMenuModifyLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalesListModifyLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalesListModifyLog.Designer.cs">
+      <DependentUpon>FormSalesListModifyLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSearchSalesList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuModify.resx">
       <DependentUpon>FormMenuModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuModifyLog.resx">
+      <DependentUpon>FormMenuModifyLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSalesListModifyLog.resx">
+      <DependentUpon>FormSalesListModifyLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearchSalesList.resx">
       <DependentUpon>FormSearchSalesList.cs</DependentUpon>

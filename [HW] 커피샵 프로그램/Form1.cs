@@ -247,7 +247,7 @@ namespace _HW__커피샵_프로그램
                 }
             }
 
-            if(!isGoodsExist) //동일한 상품이 장바구니에 담겨 있지 않으면 실행
+            if (!isGoodsExist) //동일한 상품이 장바구니에 담겨 있지 않으면 실행
             {
                 CoffeeSales coffee = new CoffeeSales();
                 coffee.id = dataGridViewCoffee.CurrentRow.Cells["순번"].Value.ToString();
@@ -268,8 +268,6 @@ namespace _HW__커피샵_프로그램
                 row.Cells["개수"].Value = goods[existIndex].count;
                 row.Cells["가격"].Value = goods[existIndex].price;
             }
-
-
         }
 
         // 장바구니에 담은 상품을 삭제하는 메소드
@@ -300,6 +298,18 @@ namespace _HW__커피샵_프로그램
         private void 시간별주문내역ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSearchSalesList newForm = new FormSearchSalesList();
+            newForm.Show();
+        }
+
+        private void 커피정보변경이력ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMenuModifyLog newForm = new FormMenuModifyLog();
+            newForm.Show();
+        }
+
+        private void 커피주문정보변경이력ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSalesListModifyLog newForm = new FormSalesListModifyLog();
             newForm.Show();
         }
     }
